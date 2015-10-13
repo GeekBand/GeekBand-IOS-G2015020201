@@ -11,6 +11,10 @@
 		1E6E1D761BCCB348005BB576 /* moranProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D751BCCB348005BB576 /* moranProUITests.swift */; };
 		1E6E1D941BCCB3D5005BB576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D851BCCB3D5005BB576 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		1E6E1D951BCCB3D5005BB576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E6E1D901BCCB3D5005BB576 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		1E6E1FD11BCCC42D005BB576 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FCF1BCCC42D005BB576 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1E6E1FD21BCCC42D005BB576 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FD01BCCC42D005BB576 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1E6E1FD41BCCC4D5005BB576 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E6E1FD31BCCC4D5005BB576 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
+		1E6E1FD61BCCC4FF005BB576 /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FD51BCCC4FF005BB576 /* RequestURL.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,10 @@
 		1E6E1D851BCCB3D5005BB576 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E6E1D901BCCB3D5005BB576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E6E1D931BCCB3D5005BB576 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E6E1FCF1BCCC42D005BB576 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1E6E1FD01BCCC42D005BB576 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1E6E1FD31BCCC4D5005BB576 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		1E6E1FD51BCCC4FF005BB576 /* RequestURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,7 @@
 		1E6E1D861BCCB3D5005BB576 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1E6E1FCE1BCCC42D005BB576 /* Login */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +187,7 @@
 		1E6E1D8B1BCCB3D5005BB576 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				1E6E1FD51BCCC4FF005BB576 /* RequestURL.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -216,6 +226,7 @@
 		1E6E1D911BCCB3D5005BB576 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				1E6E1FD31BCCC4D5005BB576 /* Login.storyboard */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -226,6 +237,15 @@
 				1E6E1D931BCCB3D5005BB576 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1E6E1FCE1BCCC42D005BB576 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E1FCF1BCCC42D005BB576 /* LoginViewController.swift */,
+				1E6E1FD01BCCC42D005BB576 /* SignUpViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E6E1FD41BCCC4D5005BB576 /* Login.storyboard in Resources */,
 				1E6E1D951BCCB3D5005BB576 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,7 +380,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E6E1FD21BCCC42D005BB576 /* SignUpViewController.swift in Sources */,
+				1E6E1FD11BCCC42D005BB576 /* LoginViewController.swift in Sources */,
 				1E6E1D941BCCB3D5005BB576 /* AppDelegate.swift in Sources */,
+				1E6E1FD61BCCC4FF005BB576 /* RequestURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +589,7 @@
 				1E6E1D7C1BCCB348005BB576 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E6E1D7D1BCCB348005BB576 /* Build configuration list for PBXNativeTarget "moranProTests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +598,7 @@
 				1E6E1D7F1BCCB348005BB576 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E6E1D801BCCB348005BB576 /* Build configuration list for PBXNativeTarget "moranProUITests" */ = {
 			isa = XCConfigurationList;
@@ -581,6 +607,7 @@
 				1E6E1D821BCCB348005BB576 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
