@@ -7,9 +7,24 @@
 //
 
 import UIKit
+enum requestType {
+    case login
+    case register
+}
 
 class RequestURL: NSObject {
-    static func request(method: String, url: String, params:String, callback: (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void) {
+
+    static func request(method: String, type:requestType, params:String, callback: (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void) {
+        
+        var url = ""
+        switch type {
+        case .login:
+            url = "http://moran.chinacloudapp.cn/moran/web/user/login"
+        case .register:
+            url = "http://moran.chinacloudapp.cn/moran/web/user/register"
+        }
+    
+        
         let session = NSURLSession.sharedSession()
 
         var newURL = url

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var userEmail: UITextField!
     
@@ -20,48 +20,67 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        userEmail.delegate = self
+        userPwd.delegate = self
+        rpPwd.delegate = self
     }
 
     @IBAction func SignUpUserAction(sender: AnyObject) {
 
         if(userEmail.text!.isEmpty)
         {
-            AlertEx("警告", messageStr: "邮箱没有填写", actionTitle: "好的")
+            MBProgressHUD.showError("邮箱没有填写")
             return
         }
         if(userPwd.text!.isEmpty)
         {
-            AlertEx("警告", messageStr: "密码没有填写", actionTitle: "好的")
+            MBProgressHUD.showError("密码没有填写")
             return
         }
         
         if(userPwd.text?.characters.count<6 || userPwd.text?.characters.count>20)
         {
-            AlertEx("警告", messageStr: "密码密码长度在6-20位之间", actionTitle: "好的")
+            MBProgressHUD.showError("密码密码长度在6-20位之间")
             return
         }
         if(rpPwd.text!.isEmpty)
         {
-            AlertEx("警告", messageStr: "重复密码没有填写", actionTitle: "好的")
+            MBProgressHUD.showError("重复密码没有填写")
             return
         }
         if(userPwd.text != rpPwd.text)
         {
-            AlertEx("警告", messageStr: "两次密码不一致", actionTitle: "好的")
+            MBProgressHUD.showError("两次密码不一致")
             userPwd.text = ""
             rpPwd.text = ""
             return
         }
         
-        RequestURL.request("post", url: "http://moran.chinacloudapp.cn/moran/web/user/register",params:"username=\(userEmail.text)&password=\(userPwd.text)&email=\(userEmail.text)&gbid=G2015020201") { (data, response, error) -> Void in
+        RequestURL.request("post", type: requestType.register,params:"username=\(userEmail.text!)&password=\(userPwd.text!)&email=\(userEmail.text!)&gbid=G2015020201") { (data, response, error) -> Void in
             if(error != nil)
             {
                 print(error)
+                return
             }
             print(NSString(data: data, encoding: NSUTF8StringEncoding))
+            let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+            let message: String = json.objectForKey("message") as! String
+            if(message == "Register success")
+            {
+                
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                    MBProgressHUD.showError("注册成功")
+                })
+                
+            }
+            else
+            {
+                dispatch_async(dispatch_get_main_queue(),{
+                MBProgressHUD.showError("注册失败")
+                })
+            }
             
-            //let message = JSON(data: data)
         }
     }
 
@@ -81,6 +100,37 @@ class SignUpViewController: UIViewController {
         self.presentViewController(alertView, animated: true, completion: nil)
     }
 
+    
+    // MARK: - 键盘遮挡事件
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        let frame:CGRect = textField.frame;
+        let offset = frame.origin.y + 82 - (self.view.frame.size.height - 216.0);//键盘高度216
+        
+        let animationDuration:NSTimeInterval = 0.3
+        UIView.beginAnimations("ResizeForKeyboard", context: nil)
+        UIView.setAnimationDuration(animationDuration)
+        //将视图的Y坐标向上移动offset个单位，以使下面腾出地方用于软键盘的显示
+        if(offset > 0)
+        {
+            self.view.frame = CGRectMake(0.0, -offset, self.view.frame.size.width, self.view.frame.size.height)
+        }
+        UIView.commitAnimations()
+        
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        let animationDuration:NSTimeInterval = 0.3
+        UIView.beginAnimations("ResizeForKeyboard", context: nil)
+        UIView.setAnimationDuration(animationDuration)
+        self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        UIView.commitAnimations()
+        
+    }
     /*
     // MARK: - Navigation
 

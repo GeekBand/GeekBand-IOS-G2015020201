@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E062A961BCCE3BE00920FE6 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E062A921BCCE3BE00920FE6 /* MBProgressHUD+MJ.m */; settings = {ASSET_TAGS = (); }; };
+		1E062A971BCCE3BE00920FE6 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E062A931BCCE3BE00920FE6 /* MBProgressHUD.bundle */; settings = {ASSET_TAGS = (); }; };
+		1E062A981BCCE3BE00920FE6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E062A951BCCE3BE00920FE6 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
+		1E062AA11BCCE9EA00920FE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E062AA01BCCE9EA00920FE6 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		1E062AA41BCCEAA200920FE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E062AA31BCCEAA200920FE6 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1E6E1D6B1BCCB348005BB576 /* moranProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D6A1BCCB348005BB576 /* moranProTests.swift */; };
 		1E6E1D761BCCB348005BB576 /* moranProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D751BCCB348005BB576 /* moranProUITests.swift */; };
 		1E6E1D941BCCB3D5005BB576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D851BCCB3D5005BB576 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		1E6E1D951BCCB3D5005BB576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E6E1D901BCCB3D5005BB576 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		1E6E1FD11BCCC42D005BB576 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FCF1BCCC42D005BB576 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1E6E1FD21BCCC42D005BB576 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FD01BCCC42D005BB576 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		1E6E1FD41BCCC4D5005BB576 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E6E1FD31BCCC4D5005BB576 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
 		1E6E1FD61BCCC4FF005BB576 /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FD51BCCC4FF005BB576 /* RequestURL.swift */; settings = {ASSET_TAGS = (); }; };
+		1ECF26581BCD018200EECEBB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF26571BCD018200EECEBB /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +39,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1E6E20341BCCC70B005BB576 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1E062A911BCCE3BE00920FE6 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		1E062A921BCCE3BE00920FE6 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		1E062A931BCCE3BE00920FE6 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		1E062A941BCCE3BE00920FE6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		1E062A951BCCE3BE00920FE6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		1E062A9F1BCCE61600920FE6 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		1E062AA01BCCE9EA00920FE6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1E062AA31BCCEAA200920FE6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1E6E1D521BCCB348005BB576 /* moranPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moranPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E6E1D661BCCB348005BB576 /* moranProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moranProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E6E1D6A1BCCB348005BB576 /* moranProTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moranProTests.swift; sourceTree = "<group>"; };
@@ -47,8 +73,8 @@
 		1E6E1D931BCCB3D5005BB576 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E6E1FCF1BCCC42D005BB576 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1E6E1FD01BCCC42D005BB576 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		1E6E1FD31BCCC4D5005BB576 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1E6E1FD51BCCC4FF005BB576 /* RequestURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestURL.swift; sourceTree = "<group>"; };
+		1ECF26571BCD018200EECEBB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +102,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E062A901BCCE3BE00920FE6 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1E062A911BCCE3BE00920FE6 /* MBProgressHUD+MJ.h */,
+				1E062A921BCCE3BE00920FE6 /* MBProgressHUD+MJ.m */,
+				1E062A931BCCE3BE00920FE6 /* MBProgressHUD.bundle */,
+				1E062A941BCCE3BE00920FE6 /* MBProgressHUD.h */,
+				1E062A951BCCE3BE00920FE6 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		1E062AA21BCCEA0F00920FE6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1E062AA31BCCEAA200920FE6 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		1E6E1D491BCCB348005BB576 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +197,7 @@
 		1E6E1D861BCCB3D5005BB576 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1E062AA21BCCEA0F00920FE6 /* Main */,
 				1E6E1FCE1BCCC42D005BB576 /* Login */,
 			);
 			path = Controllers;
@@ -195,6 +242,8 @@
 		1E6E1D8C1BCCB3D5005BB576 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1E062A901BCCE3BE00920FE6 /* MBProgressHUD */,
+				1E062A9F1BCCE61600920FE6 /* Bridging-Header.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -226,7 +275,8 @@
 		1E6E1D911BCCB3D5005BB576 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				1E6E1FD31BCCC4D5005BB576 /* Login.storyboard */,
+				1E062AA01BCCE9EA00920FE6 /* Main.storyboard */,
+				1ECF26571BCD018200EECEBB /* Login.storyboard */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -258,6 +308,7 @@
 				1E6E1D4E1BCCB348005BB576 /* Sources */,
 				1E6E1D4F1BCCB348005BB576 /* Frameworks */,
 				1E6E1D501BCCB348005BB576 /* Resources */,
+				1E6E20341BCCC70B005BB576 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,8 +405,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E6E1FD41BCCC4D5005BB576 /* Login.storyboard in Resources */,
 				1E6E1D951BCCB3D5005BB576 /* Assets.xcassets in Resources */,
+				1E062A971BCCE3BE00920FE6 /* MBProgressHUD.bundle in Resources */,
+				1ECF26581BCD018200EECEBB /* Login.storyboard in Resources */,
+				1E062AA11BCCE9EA00920FE6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +433,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E062AA41BCCEAA200920FE6 /* MainViewController.swift in Sources */,
 				1E6E1FD21BCCC42D005BB576 /* SignUpViewController.swift in Sources */,
+				1E062A981BCCE3BE00920FE6 /* MBProgressHUD.m in Sources */,
+				1E062A961BCCE3BE00920FE6 /* MBProgressHUD+MJ.m in Sources */,
 				1E6E1FD11BCCC42D005BB576 /* LoginViewController.swift in Sources */,
 				1E6E1D941BCCB3D5005BB576 /* AppDelegate.swift in Sources */,
 				1E6E1FD61BCCC4FF005BB576 /* RequestURL.swift in Sources */,
@@ -504,10 +560,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "moranPro/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fish.moranPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "moranPro/Classes/Utilities/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -515,10 +574,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "moranPro/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fish.moranPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "moranPro/Classes/Utilities/Bridging-Header.h";
 			};
 			name = Release;
 		};
