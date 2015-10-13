@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E6E1D6B1BCCB348005BB576 /* moranProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D6A1BCCB348005BB576 /* moranProTests.swift */; };
+		1E6E1D761BCCB348005BB576 /* moranProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D751BCCB348005BB576 /* moranProUITests.swift */; };
+		1E6E1D941BCCB3D5005BB576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D851BCCB3D5005BB576 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		1E6E1D951BCCB3D5005BB576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E6E1D901BCCB3D5005BB576 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E6E1D671BCCB348005BB576 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E6E1D4A1BCCB348005BB576 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E6E1D511BCCB348005BB576;
+			remoteInfo = moranPro;
+		};
+		1E6E1D721BCCB348005BB576 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E6E1D4A1BCCB348005BB576 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E6E1D511BCCB348005BB576;
+			remoteInfo = moranPro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E6E1D521BCCB348005BB576 /* moranPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moranPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E6E1D661BCCB348005BB576 /* moranProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moranProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E6E1D6A1BCCB348005BB576 /* moranProTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moranProTests.swift; sourceTree = "<group>"; };
+		1E6E1D6C1BCCB348005BB576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E6E1D711BCCB348005BB576 /* moranProUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moranProUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E6E1D751BCCB348005BB576 /* moranProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moranProUITests.swift; sourceTree = "<group>"; };
+		1E6E1D771BCCB348005BB576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E6E1D851BCCB3D5005BB576 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1E6E1D901BCCB3D5005BB576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E6E1D931BCCB3D5005BB576 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E6E1D4F1BCCB348005BB576 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E6E1D631BCCB348005BB576 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E6E1D6E1BCCB348005BB576 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E6E1D491BCCB348005BB576 = {
+			isa = PBXGroup;
+			children = (
+				1E6E1D541BCCB348005BB576 /* moranPro */,
+				1E6E1D691BCCB348005BB576 /* moranProTests */,
+				1E6E1D741BCCB348005BB576 /* moranProUITests */,
+				1E6E1D531BCCB348005BB576 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E6E1D531BCCB348005BB576 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E1D521BCCB348005BB576 /* moranPro.app */,
+				1E6E1D661BCCB348005BB576 /* moranProTests.xctest */,
+				1E6E1D711BCCB348005BB576 /* moranProUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E6E1D541BCCB348005BB576 /* moranPro */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E1D831BCCB3D5005BB576 /* Classes */,
+				1E6E1D8E1BCCB3D5005BB576 /* Resources */,
+				1E6E1D921BCCB3D5005BB576 /* Supporting Files */,
+			);
+			path = moranPro;
+			sourceTree = "<group>";
+		};
+		1E6E1D691BCCB348005BB576 /* moranProTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E1D6A1BCCB348005BB576 /* moranProTests.swift */,
+				1E6E1D6C1BCCB348005BB576 /* Info.plist */,
+			);
+			path = moranProTests;
+			sourceTree = "<group>";
+		};
+		1E6E1D741BCCB348005BB576 /* moranProUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E1D751BCCB348005BB576 /* moranProUITests.swift */,
+				1E6E1D771BCCB348005BB576 /* Info.plist */,
+			);
+			path = moranProUITests;
+			sourceTree = "<group>";
+		};
+		1E6E1D831BCCB3D5005BB576 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E1D841BCCB3D5005BB576 /* AppDelegate */,
+				1E6E1D861BCCB3D5005BB576 /* Controllers */,
+				1E6E1D871BCCB3D5005BB576 /* Global */,
+				1E6E1D881BCCB3D5005BB576 /* Models */,
+				1E6E1D891BCCB3D5005BB576 /* Parsers */,
+				1E6E1D8A1BCCB3D5005BB576 /* Publice */,
+				1E6E1D8B1BCCB3D5005BB576 /* Requests */,
+				1E6E1D8C1BCCB3D5005BB576 /* Utilities */,
+				1E6E1D8D1BCCB3D5005BB576 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1E6E1D841BCCB3D5005BB576 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E1D851BCCB3D5005BB576 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		1E6E1D861BCCB3D5005BB576 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1E6E1D871BCCB3D5005BB576 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		1E6E1D881BCCB3D5005BB576 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E6E1D891BCCB3D5005BB576 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		1E6E1D8A1BCCB3D5005BB576 /* Publice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Publice;
+			sourceTree = "<group>";
+		};
+		1E6E1D8B1BCCB3D5005BB576 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		1E6E1D8C1BCCB3D5005BB576 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1E6E1D8D1BCCB3D5005BB576 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1E6E1D8E1BCCB3D5005BB576 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E1D8F1BCCB3D5005BB576 /* Images */,
+				1E6E1D911BCCB3D5005BB576 /* XIBs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1E6E1D8F1BCCB3D5005BB576 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E1D901BCCB3D5005BB576 /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		1E6E1D911BCCB3D5005BB576 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
+		1E6E1D921BCCB3D5005BB576 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E1D931BCCB3D5005BB576 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E6E1D511BCCB348005BB576 /* moranPro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E6E1D7A1BCCB348005BB576 /* Build configuration list for PBXNativeTarget "moranPro" */;
+			buildPhases = (
+				1E6E1D4E1BCCB348005BB576 /* Sources */,
+				1E6E1D4F1BCCB348005BB576 /* Frameworks */,
+				1E6E1D501BCCB348005BB576 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = moranPro;
+			productName = moranPro;
+			productReference = 1E6E1D521BCCB348005BB576 /* moranPro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E6E1D651BCCB348005BB576 /* moranProTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E6E1D7D1BCCB348005BB576 /* Build configuration list for PBXNativeTarget "moranProTests" */;
+			buildPhases = (
+				1E6E1D621BCCB348005BB576 /* Sources */,
+				1E6E1D631BCCB348005BB576 /* Frameworks */,
+				1E6E1D641BCCB348005BB576 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E6E1D681BCCB348005BB576 /* PBXTargetDependency */,
+			);
+			name = moranProTests;
+			productName = moranProTests;
+			productReference = 1E6E1D661BCCB348005BB576 /* moranProTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1E6E1D701BCCB348005BB576 /* moranProUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E6E1D801BCCB348005BB576 /* Build configuration list for PBXNativeTarget "moranProUITests" */;
+			buildPhases = (
+				1E6E1D6D1BCCB348005BB576 /* Sources */,
+				1E6E1D6E1BCCB348005BB576 /* Frameworks */,
+				1E6E1D6F1BCCB348005BB576 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E6E1D731BCCB348005BB576 /* PBXTargetDependency */,
+			);
+			name = moranProUITests;
+			productName = moranProUITests;
+			productReference = 1E6E1D711BCCB348005BB576 /* moranProUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E6E1D4A1BCCB348005BB576 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Fish;
+				TargetAttributes = {
+					1E6E1D511BCCB348005BB576 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = Z592X75Z3R;
+					};
+					1E6E1D651BCCB348005BB576 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = Z592X75Z3R;
+						TestTargetID = 1E6E1D511BCCB348005BB576;
+					};
+					1E6E1D701BCCB348005BB576 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = Z592X75Z3R;
+						TestTargetID = 1E6E1D511BCCB348005BB576;
+					};
+				};
+			};
+			buildConfigurationList = 1E6E1D4D1BCCB348005BB576 /* Build configuration list for PBXProject "moranPro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E6E1D491BCCB348005BB576;
+			productRefGroup = 1E6E1D531BCCB348005BB576 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E6E1D511BCCB348005BB576 /* moranPro */,
+				1E6E1D651BCCB348005BB576 /* moranProTests */,
+				1E6E1D701BCCB348005BB576 /* moranProUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E6E1D501BCCB348005BB576 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E6E1D951BCCB3D5005BB576 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E6E1D641BCCB348005BB576 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E6E1D6F1BCCB348005BB576 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E6E1D4E1BCCB348005BB576 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E6E1D941BCCB3D5005BB576 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E6E1D621BCCB348005BB576 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E6E1D6B1BCCB348005BB576 /* moranProTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E6E1D6D1BCCB348005BB576 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E6E1D761BCCB348005BB576 /* moranProUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E6E1D681BCCB348005BB576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E6E1D511BCCB348005BB576 /* moranPro */;
+			targetProxy = 1E6E1D671BCCB348005BB576 /* PBXContainerItemProxy */;
+		};
+		1E6E1D731BCCB348005BB576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E6E1D511BCCB348005BB576 /* moranPro */;
+			targetProxy = 1E6E1D721BCCB348005BB576 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1E6E1D781BCCB348005BB576 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1E6E1D791BCCB348005BB576 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E6E1D7B1BCCB348005BB576 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "moranPro/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fish.moranPro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1E6E1D7C1BCCB348005BB576 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "moranPro/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fish.moranPro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1E6E1D7E1BCCB348005BB576 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = moranProTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fish.moranProTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moranPro.app/moranPro";
+			};
+			name = Debug;
+		};
+		1E6E1D7F1BCCB348005BB576 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = moranProTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fish.moranProTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moranPro.app/moranPro";
+			};
+			name = Release;
+		};
+		1E6E1D811BCCB348005BB576 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = moranProUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fish.moranProUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = moranPro;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1E6E1D821BCCB348005BB576 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = moranProUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Fish.moranProUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = moranPro;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E6E1D4D1BCCB348005BB576 /* Build configuration list for PBXProject "moranPro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E6E1D781BCCB348005BB576 /* Debug */,
+				1E6E1D791BCCB348005BB576 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E6E1D7A1BCCB348005BB576 /* Build configuration list for PBXNativeTarget "moranPro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E6E1D7B1BCCB348005BB576 /* Debug */,
+				1E6E1D7C1BCCB348005BB576 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1E6E1D7D1BCCB348005BB576 /* Build configuration list for PBXNativeTarget "moranProTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E6E1D7E1BCCB348005BB576 /* Debug */,
+				1E6E1D7F1BCCB348005BB576 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1E6E1D801BCCB348005BB576 /* Build configuration list for PBXNativeTarget "moranProUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E6E1D811BCCB348005BB576 /* Debug */,
+				1E6E1D821BCCB348005BB576 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E6E1D4A1BCCB348005BB576 /* Project object */;
+}
