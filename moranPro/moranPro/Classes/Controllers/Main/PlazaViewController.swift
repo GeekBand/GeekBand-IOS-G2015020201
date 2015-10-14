@@ -1,20 +1,20 @@
 //
-//  MainViewController.swift
+//  PlazaViewController.swift
 //  moranPro
 //
-//  Created by 李建澎 on 15/10/13.
+//  Created by 李建澎 on 15/10/14.
 //  Copyright © 2015年 Fish. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class PlazaViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-      //self.tabBarController?.tabBar.tintColor = UIColor(red:233.0/255.0,green:106.0/255.0,blue:52.0/255.0,alpha:1)
+        self.tabBar.tintColor = UIColor(red:233.0/255.0,green:106.0/255.0,blue:52.0/255.0,alpha:1)
         
     }
 

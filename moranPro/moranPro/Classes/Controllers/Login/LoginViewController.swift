@@ -55,13 +55,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                 dispatch_async(dispatch_get_main_queue(),{
                     let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
                     
-                    let main:MainViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+                    let main:PlazaViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("PlazaViewController") as! PlazaViewController
                     
-                    let mainNav = UINavigationController(rootViewController: main)
+                    //let maintab = UITabBarController()
+                    //maintab.viewControllers = [main]
                     
                     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     
-                    appDelegate.window?.rootViewController = mainNav
+                    appDelegate.window?.rootViewController = main
                 })
             }
             else{

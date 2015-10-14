@@ -12,6 +12,7 @@
 		1E062A981BCCE3BE00920FE6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E062A951BCCE3BE00920FE6 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
 		1E062AA11BCCE9EA00920FE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E062AA01BCCE9EA00920FE6 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		1E062AA41BCCEAA200920FE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E062AA31BCCEAA200920FE6 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1E59D9381BCE9A8E006C2D0D /* PlazaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E59D9371BCE9A8E006C2D0D /* PlazaViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1E6E1D6B1BCCB348005BB576 /* moranProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D6A1BCCB348005BB576 /* moranProTests.swift */; };
 		1E6E1D761BCCB348005BB576 /* moranProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D751BCCB348005BB576 /* moranProUITests.swift */; };
 		1E6E1D941BCCB3D5005BB576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1D851BCCB3D5005BB576 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
@@ -61,6 +62,7 @@
 		1E062A9F1BCCE61600920FE6 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		1E062AA01BCCE9EA00920FE6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1E062AA31BCCEAA200920FE6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1E59D9371BCE9A8E006C2D0D /* PlazaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlazaViewController.swift; sourceTree = "<group>"; };
 		1E6E1D521BCCB348005BB576 /* moranPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moranPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E6E1D661BCCB348005BB576 /* moranProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moranProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E6E1D6A1BCCB348005BB576 /* moranProTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moranProTests.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				1E062AA31BCCEAA200920FE6 /* MainViewController.swift */,
+				1E59D9371BCE9A8E006C2D0D /* PlazaViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				1E062AA41BCCEAA200920FE6 /* MainViewController.swift in Sources */,
 				1E6E1FD21BCCC42D005BB576 /* SignUpViewController.swift in Sources */,
 				1E062A981BCCE3BE00920FE6 /* MBProgressHUD.m in Sources */,
+				1E59D9381BCE9A8E006C2D0D /* PlazaViewController.swift in Sources */,
 				1E062A961BCCE3BE00920FE6 /* MBProgressHUD+MJ.m in Sources */,
 				1E6E1FD11BCCC42D005BB576 /* LoginViewController.swift in Sources */,
 				1E6E1D941BCCB3D5005BB576 /* AppDelegate.swift in Sources */,

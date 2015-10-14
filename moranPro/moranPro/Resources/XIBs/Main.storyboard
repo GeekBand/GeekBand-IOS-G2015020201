@@ -8,6 +8,7 @@
         <scene sceneID="I3n-iQ-bo1">
             <objects>
                 <navigationController id="ZW3-N1-eHI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="Icp-xT-6Rr"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8M9-St-G2i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -15,12 +16,33 @@
                         <animations/>
                     </navigationBar>
                     <connections>
-                        <segue destination="e8r-Vf-9ku" kind="relationship" relationship="rootViewController" id="Xri-gc-wpk"/>
+                        <segue destination="e8r-Vf-9ku" kind="relationship" relationship="rootViewController" id="E4I-0M-q8G"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J20-lw-7XA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-645" y="407"/>
+            <point key="canvasLocation" x="-1043" y="179"/>
+        </scene>
+        <!--Plaza View Controller-->
+        <scene sceneID="goP-3S-QgF">
+            <objects>
+                <tabBarController storyboardIdentifier="PlazaViewController" id="6FA-o4-jNS" customClass="PlazaViewController" customModule="moranPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gaF-Jr-cT1"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="cv2-eF-6ie">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ZW3-N1-eHI" kind="relationship" relationship="viewControllers" id="tgU-Pv-voc"/>
+                        <segue destination="dfv-pe-JgJ" kind="relationship" relationship="viewControllers" id="DQt-IO-3ZP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXB-it-wZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1804" y="429"/>
         </scene>
         <!--广场-->
         <scene sceneID="bBk-SX-uLm">
@@ -36,12 +58,60 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="广场" image="square" selectedImage="square_selected" id="ggw-eP-6Me"/>
                     <navigationItem key="navigationItem" title="广场" id="xfn-na-ilD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5s-Eb-7AK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-227" y="407"/>
+            <point key="canvasLocation" x="-507" y="203"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="rSz-id-huQ">
+            <objects>
+                <navigationController id="dfv-pe-JgJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" id="CTS-GH-9hF"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9f2-tr-jKC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HOj-9M-sLt" kind="relationship" relationship="rootViewController" id="fNJ-hp-on1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIq-MQ-Vom" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1031" y="819"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="Tb4-lH-JlS">
+            <objects>
+                <viewController id="HOj-9M-sLt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bBw-72-PjM"/>
+                        <viewControllerLayoutGuide type="bottom" id="iby-x5-c0g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh2-eb-cIr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="我的" image="my" selectedImage="my_selected" id="4Ex-9Y-GtC"/>
+                    <navigationItem key="navigationItem" title="我的" id="x66-OL-1vy"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ds-3T-fur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-543" y="819"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="my" width="22" height="22"/>
+        <image name="my_selected" width="22" height="22"/>
+        <image name="square" width="22" height="22"/>
+        <image name="square_selected" width="22" height="22"/>
+    </resources>
 </document>
