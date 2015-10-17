@@ -24,29 +24,44 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
 
         if(loginEmail.text!.isEmpty)
         {
-            MBProgressHUD.showError("邮箱不能为空")
+            self.noticeError("邮箱没有填写!")
             return
         }
         if(loginPwd.text!.isEmpty)
         {
-            MBProgressHUD.showError("密码不能为空")
+            self.noticeError("密码不能为空!")
             return
         }
-        MBProgressHUD.showMessage("登录中...")
-        
+        self.pleaseWait()
         let data:NSData = RequestURL.request("post", type: requestType.login,params:"email=\(loginEmail.text!)&password=\(loginPwd.text!)")
         
         let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-        
+        print(json)
         let message: String = json.objectForKey("message") as! String
         
         if(message == "Login success")
         {
+            let userid:String = json.objectForKey("data")!.objectForKey("user_id") as! String
+            let username:String = json.objectForKey("data")!.objectForKey("user_name") as! String
             let token:String = json.objectForKey("data")!.objectForKey("token") as! String
-            MBProgressHUD.hideHUD()
+            //UserInfo.token = token
+            let useremail = self.loginEmail.text
+            self.clearAllNotice()
+            if(userid != "")
+            {
+                NSUserDefaults.standardUserDefaults().setObject(userid, forKey: "user_ID")
+            }
+            if(username != "")
+            {
+                NSUserDefaults.standardUserDefaults().setObject(username, forKey: "user_Name")
+            }
             if(token != "" )
             {
-                NSUserDefaults.standardUserDefaults().setObject(token, forKey: "user_info")
+                NSUserDefaults.standardUserDefaults().setObject(token, forKey: "user_Token")
+            }
+            if(useremail != "" )
+            {
+                NSUserDefaults.standardUserDefaults().setObject(useremail, forKey: "user_Email")
             }
             
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -54,9 +69,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.window?.rootViewController = main
         }
-        else{
-            MBProgressHUD.hideHUD()
-            MBProgressHUD.showError("登录失败")
+        else if(message == "No such user"){
+            self.clearAllNotice()
+            self.noticeError("账户不存在!")
+        }
+        else if(message == "Wrong password"){
+            self.clearAllNotice()
+            self.noticeError("密码不正确!")
+        }
+        else
+        {
+            self.clearAllNotice()
+            self.noticeError("登录失败!")
         }
 
     }
@@ -69,7 +93,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         let frame:CGRect = textField.frame;
-        let offset = frame.origin.y + 82 - (self.view.frame.size.height - 216.0);//键盘高度216
+        let offset = frame.origin.y + 92 - (self.view.frame.size.height - 216.0);//键盘高度216
         
         let animationDuration:NSTimeInterval = 0.3
         UIView.beginAnimations("ResizeForKeyboard", context: nil)

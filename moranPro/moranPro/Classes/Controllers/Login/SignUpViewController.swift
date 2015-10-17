@@ -29,28 +29,28 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
 
         if(userEmail.text!.isEmpty)
         {
-            MBProgressHUD.showError("邮箱没有填写")
+            self.noticeError("邮箱没有填写!")
             return
         }
         if(userPwd.text!.isEmpty)
         {
-            MBProgressHUD.showError("密码没有填写")
+            self.noticeError("密码没有填写!")
             return
         }
         
         if(userPwd.text?.characters.count<6 || userPwd.text?.characters.count>20)
         {
-            MBProgressHUD.showError("密码密码长度在6-20位之间")
+            self.noticeError("密码密码长度在6-20位之间!")
             return
         }
         if(rpPwd.text!.isEmpty)
         {
-            MBProgressHUD.showError("重复密码没有填写")
+            self.noticeError("重复密码没有填写!")
             return
         }
         if(userPwd.text != rpPwd.text)
         {
-            MBProgressHUD.showError("两次密码不一致")
+            self.noticeError("两次密码不一致!")
             userPwd.text = ""
             rpPwd.text = ""
             return
@@ -105,7 +105,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         let frame:CGRect = textField.frame;
-        let offset = frame.origin.y + 82 - (self.view.frame.size.height - 216.0);//键盘高度216
+        let offset = frame.origin.y + 92 - (self.view.frame.size.height - 216.0);//键盘高度216
         
         let animationDuration:NSTimeInterval = 0.3
         UIView.beginAnimations("ResizeForKeyboard", context: nil)

@@ -8,6 +8,9 @@
 
 import UIKit
 
-class UserInfo: NSObject {
+public class UserInfo: NSObject {
+
+    var token:String?
+    
 
 }

@@ -15,7 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let userToken = NSUserDefaults.standardUserDefaults().stringForKey("user_Token")
+        
+        
+        
+        print(userToken)
+        if(userToken != nil)
+        {
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let main:PlazaViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("PlazaViewController") as! PlazaViewController
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.window?.rootViewController = main
+        }
         
         return true
     }

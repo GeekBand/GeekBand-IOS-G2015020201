@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlazaViewController: UITabBarController {
+class PlazaViewController: UITabBarController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +16,16 @@ class PlazaViewController: UITabBarController {
         // Do any additional setup after loading the view.
         self.tabBar.tintColor = UIColor(red:233.0/255.0,green:106.0/255.0,blue:52.0/255.0,alpha:1)
         
-//        let tabitem:[UITabBarItem] = self.tabBar.items!
-//        tabitem[0].title = "广场"
-//        tabitem[0].image = UIImage(named: "my_selected")
-//        tabitem[0].selectedImage = UIImage(named: "my")
-//        
-//        tabitem[1].title = "我的"
-//        tabitem[1].image = UIImage(named: "my")
-//        tabitem[1].selectedImage = UIImage(named: "my_selected")
+        let tabitem:[UITabBarItem] = self.tabBar.items!
+        tabitem[0].title = "广场"
+        tabitem[0].image = UIImage(named: "square")?.imageWithRenderingMode( UIImageRenderingMode.AlwaysOriginal)
+        tabitem[0].selectedImage = UIImage(named: "square_selected")?.imageWithRenderingMode( UIImageRenderingMode.AlwaysOriginal)
+        
+        tabitem[1].title = "我的"
+        tabitem[1].image = UIImage(named: "my")?.imageWithRenderingMode( UIImageRenderingMode.AlwaysOriginal)
+
+        tabitem[1].selectedImage = UIImage(named: "my_selected")?.imageWithRenderingMode( UIImageRenderingMode.AlwaysOriginal)
+
         
                 
         
@@ -43,15 +45,38 @@ class PlazaViewController: UITabBarController {
     
     func addOrderView()
     {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle:UIAlertControllerStyle.ActionSheet)
-        alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
-        
-        alert.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.Destructive, handler: nil))
+        let picker = UIImagePickerController()
 
-        alert.addAction(UIAlertAction(title: "相册", style: UIAlertActionStyle.Default, handler: nil))
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle:UIAlertControllerStyle.ActionSheet)
+        alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler:nil))
+        
+        alert.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+            picker.delegate = self
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            
+            self.presentViewController(picker, animated: true, completion: nil)
+        }))
+
+        alert.addAction(UIAlertAction(title: "相册", style: UIAlertActionStyle.Default, handler: {
+            (UIAlertAction) -> Void in
+            picker.delegate = self
+            picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            
+            self.presentViewController(picker, animated: true, completion: nil)
+        }))
 
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        //将图片赋值给头像图片
+        //UserImg.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        print("获取图片")
+        print(info[UIImagePickerControllerOriginalImage] as? UIImage)
+        //关闭照片选取器
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
