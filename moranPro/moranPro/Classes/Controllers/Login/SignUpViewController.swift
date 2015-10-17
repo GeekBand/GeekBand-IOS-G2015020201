@@ -56,32 +56,32 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
             return
         }
         
-        RequestURL.request("post", type: requestType.register,params:"username=\(userEmail.text!)&password=\(userPwd.text!)&email=\(userEmail.text!)&gbid=G2015020201") { (data, response, error) -> Void in
-            if(error != nil)
-            {
-                print(error)
-                return
-            }
-            print(NSString(data: data, encoding: NSUTF8StringEncoding))
-            let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-            let message: String = json.objectForKey("message") as! String
-            if(message == "Register success")
-            {
-                
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                    MBProgressHUD.showError("注册成功")
-                })
-                
-            }
-            else
-            {
-                dispatch_async(dispatch_get_main_queue(),{
-                MBProgressHUD.showError("注册失败")
-                })
-            }
-            
-        }
+//        RequestURL.request("post", type: requestType.register,params:"username=\(userEmail.text!)&password=\(userPwd.text!)&email=\(userEmail.text!)&gbid=G2015020201") 
+//            if(error != nil)
+//            {
+//                print(error)
+//                return
+//            }
+//            print(NSString(data: data, encoding: NSUTF8StringEncoding))
+//            let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+//            let message: String = json.objectForKey("message") as! String
+//            if(message == "Register success")
+//            {
+//                
+//                dispatch_async(dispatch_get_main_queue(),{
+//                    self.dismissViewControllerAnimated(true, completion: nil)
+//                    MBProgressHUD.showError("注册成功")
+//                })
+//                
+//            }
+//            else
+//            {
+//                dispatch_async(dispatch_get_main_queue(),{
+//                MBProgressHUD.showError("注册失败")
+//                })
+//            }
+//            
+//        }
     }
 
     @IBAction func returnLoginView(sender: AnyObject) {

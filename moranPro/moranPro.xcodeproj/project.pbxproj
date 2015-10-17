@@ -21,6 +21,7 @@
 		1E6E1FD21BCCC42D005BB576 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FD01BCCC42D005BB576 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1E6E1FD61BCCC4FF005BB576 /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FD51BCCC4FF005BB576 /* RequestURL.swift */; settings = {ASSET_TAGS = (); }; };
 		1ECF26581BCD018200EECEBB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF26571BCD018200EECEBB /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
+		1ED513C91BD20644000BA0E8 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED513C81BD20644000BA0E8 /* MyTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		1E6E1FD01BCCC42D005BB576 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1E6E1FD51BCCC4FF005BB576 /* RequestURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestURL.swift; sourceTree = "<group>"; };
 		1ECF26571BCD018200EECEBB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		1ED513C81BD20644000BA0E8 /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				1E062AA31BCCEAA200920FE6 /* MainViewController.swift */,
 				1E59D9371BCE9A8E006C2D0D /* PlazaViewController.swift */,
+				1ED513C81BD20644000BA0E8 /* MyTableViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				1E6E1FD21BCCC42D005BB576 /* SignUpViewController.swift in Sources */,
 				1E062A981BCCE3BE00920FE6 /* MBProgressHUD.m in Sources */,
 				1E59D9381BCE9A8E006C2D0D /* PlazaViewController.swift in Sources */,
+				1ED513C91BD20644000BA0E8 /* MyTableViewController.swift in Sources */,
 				1E062A961BCCE3BE00920FE6 /* MBProgressHUD+MJ.m in Sources */,
 				1E6E1FD11BCCC42D005BB576 /* LoginViewController.swift in Sources */,
 				1E6E1D941BCCB3D5005BB576 /* AppDelegate.swift in Sources */,

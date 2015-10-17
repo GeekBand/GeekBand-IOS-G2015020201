@@ -33,46 +33,34 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             return
         }
         MBProgressHUD.showMessage("登录中...")
-        RequestURL.request("post", type: requestType.login,params:"email=\(loginEmail.text!)&password=\(loginPwd.text!)") { (data, response, error) -> Void in
-            if(error != nil)
-            {
-                print(error)
-                MBProgressHUD.showError("登录失败")
-                return
-            }
-            print(NSString(data: data, encoding: NSUTF8StringEncoding))
-            let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-            let message: String = json.objectForKey("message") as! String
-            let token:String = json.objectForKey("data")!.objectForKey("token") as! String
-            
-            if(message == "Login success")
-            {
-                MBProgressHUD.hideHUD()
-                if(token != "" )
-                {
-                    NSUserDefaults.standardUserDefaults().setObject(token, forKey: "user_info")
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-                    
-                    let main:PlazaViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("PlazaViewController") as! PlazaViewController
-                    
-                    //let maintab = UITabBarController()
-                    //maintab.viewControllers = [main]
-                    
-                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                    
-                    appDelegate.window?.rootViewController = main
-                })
-            }
-            else{
-                MBProgressHUD.hideHUD()
-                MBProgressHUD.showError("登录失败")
-            }
-        }
         
+        let data:NSData = RequestURL.request("post", type: requestType.login,params:"email=\(loginEmail.text!)&password=\(loginPwd.text!)")
+        
+        let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+        
+        let message: String = json.objectForKey("message") as! String
+        
+        if(message == "Login success")
+        {
+            let token:String = json.objectForKey("data")!.objectForKey("token") as! String
+            MBProgressHUD.hideHUD()
+            if(token != "" )
+            {
+                NSUserDefaults.standardUserDefaults().setObject(token, forKey: "user_info")
+            }
+            
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let main:PlazaViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("PlazaViewController") as! PlazaViewController
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.window?.rootViewController = main
+        }
+        else{
+            MBProgressHUD.hideHUD()
+            MBProgressHUD.showError("登录失败")
+        }
+
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

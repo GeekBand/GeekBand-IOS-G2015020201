@@ -14,7 +14,7 @@ enum requestType {
 
 class RequestURL: NSObject {
 
-    static func request(method: String, type:requestType, params:String, callback: (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void) {
+    static func request(method: String, type:requestType, params:String)-> NSData {
         
         var url = ""
         switch type {
@@ -25,8 +25,9 @@ class RequestURL: NSObject {
         }
     
         
-        let session = NSURLSession.sharedSession()
+        //let session = NSURLSession.sharedSession()
 
+        
         var newURL = url
         if method == "get" {
             newURL += "?" + params
@@ -41,9 +42,14 @@ class RequestURL: NSObject {
             request.HTTPBody = params.dataUsingEncoding(NSUTF8StringEncoding)
         }
         
-        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            callback(data: data, response: response , error: error)
-        })
-        task.resume()
+        
+        
+//        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+//            callback(data: data, response: response , error: error)
+//        })
+        let data:NSData = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+        
+        return data
+        //task.resume()
     }
    }

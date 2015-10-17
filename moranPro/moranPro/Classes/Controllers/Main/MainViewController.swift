@@ -14,8 +14,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-      //self.tabBarController?.tabBar.tintColor = UIColor(red:233.0/255.0,green:106.0/255.0,blue:52.0/255.0,alpha:1)
-        
+//        let tabitem = self.tabBarItem
+//        tabitem.title = "你好"
+//        tabitem.image = UIImage(named: "my_selected")
+//        tabitem.selectedImage = UIImage(named: "my")
+
+              
     }
 
     override func didReceiveMemoryWarning() {
