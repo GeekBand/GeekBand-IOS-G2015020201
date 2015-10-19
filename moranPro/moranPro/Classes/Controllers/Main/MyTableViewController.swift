@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MyTableViewController: UITableViewController {
 
@@ -18,19 +19,16 @@ class MyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let userName:String = NSUserDefaults.standardUserDefaults().stringForKey("user_Name")!
-        let userEmail:String = NSUserDefaults.standardUserDefaults().stringForKey("user_Email")!
-        self.userNameLab.text = userName
-        self.userEmailLab.text = userEmail
+        self.userNameLab.text = UserInfo.UserName!
+        self.userEmailLab.text = UserInfo.UserEmail!
+        
+        self.GetNewHeadImage()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "UserNameUpDatting:", name: "updateUserName", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "UserImageUpDatting:", name: "updateUserImage", object: nil)
         
         
-        let userID:String = NSUserDefaults.standardUserDefaults().stringForKey("user_ID")!
         
-        let data:NSData = RequestURL.request("get", type: requestType.showHeadImage,params:"user_id=\(userID)")
-        
-        let headimage:UIImage = UIImage(data: data)!
-        self.headImage.image = headimage;
-        self.headImage.layer.cornerRadius = 25
         //let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
         //print(json)
 
@@ -39,6 +37,43 @@ class MyTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    /**
+    初始化获取头像
+    */
+    func GetNewHeadImage()
+    {
+        
+        //let parameters = [
+        //    "user_id":UserInfo.UserID!
+        //]
+
+//        let updata:NSData = "user_id=\(UserInfo.UserID!)&token=\(UserInfo.UserToken!)&data=\(dataImage)".dataUsingEncoding(NSUTF8StringEncoding)!
+//        Alamofire.request(.GET, "http://moran.chinacloudapp.cn/moran/web/user/show", parameters: parameters).response { (request, urlresquest, data, error) -> Void in
+//            print(data)
+//            
+//            if error == nil{
+//                self.headImage.image = UIImage(data: data!)
+//            }
+//        }
+        
+    }
+    
+    /**
+    通知修改用户名
+    
+    - parameter val: 监听参数
+    */
+    func UserNameUpDatting(val:NSNotification)
+    {
+        let str = val.object as! String
+        self.userNameLab.text = str
+    }
+    
+    func UserImageUpDatting(_: NSNotification)
+    {
+        print("更新图片的方法执行了")
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +85,7 @@ class MyTableViewController: UITableViewController {
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections
-//        return 2
+//        return 3
 //    }
 //
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,11 +95,13 @@ class MyTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
-        if (section == 0) {
-            return 13;
-        }
-        return 10;
+        return 0;
     }
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
+    {
+        return 0
+    }
+    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.section == 0)

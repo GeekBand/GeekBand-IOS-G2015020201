@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="I3n-iQ-bo1">
             <objects>
-                <navigationController id="ZW3-N1-eHI" sceneMemberID="viewController">
+                <navigationController id="ZW3-N1-eHI" customClass="NavigationViewController" customModule="moranPro" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="Icp-xT-6Rr"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8M9-St-G2i">
@@ -49,12 +49,12 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="e8r-Vf-9ku" customClass="MainViewController" customModule="moranPro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XPJ-4I-HTK"/>
-                        <viewControllerLayoutGuide type="bottom" id="yEe-lv-L9n"/>
+                        <viewControllerLayoutGuide type="top" id="btL-PR-L2I"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gtc-Hg-gGW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Sxx-Wp-IuP">
+                    <view key="view" contentMode="scaleToFill" id="D0x-tL-Y12">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -63,13 +63,19 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5s-Eb-7AK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="bRp-1F-2xX">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="-507" y="203"/>
+            <point key="canvasLocation" x="-501" y="179"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="rSz-id-huQ">
             <objects>
-                <navigationController id="dfv-pe-JgJ" sceneMemberID="viewController">
+                <navigationController id="dfv-pe-JgJ" customClass="NavigationViewController" customModule="moranPro" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="CTS-GH-9hF"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9f2-tr-jKC">
@@ -83,7 +89,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIq-MQ-Vom" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1031" y="819"/>
+            <point key="canvasLocation" x="-1043" y="819"/>
         </scene>
         <!--我的-->
         <scene sceneID="13u-VL-E12">
@@ -160,17 +166,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headimage" translatesAutoresizingMaskIntoConstraints="NO" id="EyZ-pW-8hY">
+                                                    <rect key="frame" x="8" y="11" width="22" height="22"/>
+                                                    <animations/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="设置头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbO-9a-a77">
-                                                    <rect key="frame" x="42" y="11" width="205" height="21"/>
+                                                    <rect key="frame" x="41" y="11" width="205" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headimage" translatesAutoresizingMaskIntoConstraints="NO" id="EyZ-pW-8hY">
-                                                    <rect key="frame" x="8" y="11" width="22" height="22"/>
-                                                    <animations/>
-                                                </imageView>
                                             </subviews>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -201,6 +207,7 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -277,6 +284,79 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="SYe-mZ-YTd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eAM-R1-cIP">
+                                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eAM-R1-cIP" id="mpB-dq-BvO">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="评价我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bm-BL-Pi1">
+                                                    <rect key="frame" x="42" y="11" width="205" height="22"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rate" translatesAutoresizingMaskIntoConstraints="NO" id="VHx-In-sUZ">
+                                                    <rect key="frame" x="8" y="11" width="22" height="22"/>
+                                                    <animations/>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8Z5-Pb-ZvA">
+                                        <rect key="frame" x="0.0" y="568" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Z5-Pb-ZvA" id="HVH-sZ-l6o">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="follow" translatesAutoresizingMaskIntoConstraints="NO" id="NKT-hM-Jp8">
+                                                    <rect key="frame" x="8" y="11" width="22" height="22"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="关注我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAk-gj-w0Q">
+                                                    <rect key="frame" x="42" y="11" width="205" height="22"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="H4k-Tr-DRO">
+                                        <rect key="frame" x="0.0" y="612" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H4k-Tr-DRO" id="hzd-tv-aqU">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homepage" translatesAutoresizingMaskIntoConstraints="NO" id="0o1-W9-TuK">
+                                                    <rect key="frame" x="8" y="13" width="22" height="22"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="官方网站" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sd-Su-KPz">
+                                                    <rect key="frame" x="42" y="13" width="205" height="22"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="sTa-Ys-q77" id="RDx-KA-1jQ"/>
@@ -298,7 +378,7 @@
         <!--更改昵称-->
         <scene sceneID="qGo-zx-XKC">
             <objects>
-                <viewController id="ceZ-qh-B8i" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditUserNameViewController" id="ceZ-qh-B8i" customClass="EditUserNameViewController" customModule="moranPro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="00Q-LO-k9K"/>
                         <viewControllerLayoutGuide type="bottom" id="mbN-w1-Snu"/>
@@ -320,6 +400,9 @@
                                 <state key="normal" title="更改">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="EditUserNamaAction:" destination="ceZ-qh-B8i" eventType="touchUpInside" id="FzK-7N-3Fj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -337,15 +420,18 @@
                         <barButtonItem key="leftBarButtonItem" id="xiw-qw-kFU"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="txtUserName" destination="vFy-85-Ynm" id="Mdb-1s-pYs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ZX-uD-eWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-104" y="650"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="Bwh-D2-giZ">
             <objects>
-                <navigationController id="6PA-jH-qmr" sceneMemberID="viewController">
+                <navigationController id="6PA-jH-qmr" customClass="NavigationViewController" customModule="moranPro" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ixk-tQ-Kjd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -358,7 +444,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vW-mA-aNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-104" y="1305"/>
+            <point key="canvasLocation" x="496" y="1305"/>
         </scene>
         <!--头像-->
         <scene sceneID="Xqg-9T-HFR">
@@ -398,6 +484,10 @@
                                     <action selector="SelectHeadImageAction:" destination="1Bp-Bl-E4t" eventType="touchUpInside" id="bsu-Oy-O48"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQa-Ya-wBh">
+                                <rect key="frame" x="40" y="423" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -414,11 +504,12 @@
                         <outlet property="genghuanImage" destination="x6D-Ii-VGs" id="WBP-Af-D4i"/>
                         <outlet property="headImage" destination="s9C-gr-gCT" id="gRf-SY-sg6"/>
                         <outlet property="selectedHeadImage" destination="PgL-Ty-Odf" id="Sj8-5A-AHn"/>
+                        <outlet property="testImage" destination="fQa-Ya-wBh" id="Wf9-2C-gCw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZH-SK-JWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="1305"/>
+            <point key="canvasLocation" x="899" y="1305"/>
         </scene>
     </scenes>
     <resources>

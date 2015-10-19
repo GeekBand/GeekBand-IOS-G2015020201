@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 
 class HeadViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var headImage: UIImageView!
     @IBOutlet weak var selectedHeadImage: UIButton!
     @IBOutlet weak var genghuanImage: UIButton!
+    
+    
+    @IBOutlet weak var testImage: UIImageView!
+    
     override func viewDidLoad() {
        
         super.viewDidLoad()
@@ -60,20 +65,68 @@ class HeadViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     
     @IBAction func genghuanHeadAction(sender: AnyObject) {
-        let userID:String = NSUserDefaults.standardUserDefaults().stringForKey("user_ID")!
-        let userToken:String = NSUserDefaults.standardUserDefaults().stringForKey("user_Token")!
-        let dataImage:NSData = UIImageJPEGRepresentation(headImage.image!, 0.1)!
+        let dataImage:NSData = UIImageJPEGRepresentation(headImage.image!,0.000001)!
+        //self.pleaseWait()
+        
+        //self.clearAllNotice()
+        //self.testImage.image = UIImage(data: dataImage.dataUsingEncoding(NSUTF8StringEncoding)!)
 
-        print("userID:\(userID)")
-        print("token:\(userToken)")
-        RequestURL.requestImage("post", type: requestType.upHeadImage, params:"user_id=\(userID)&token=\(userToken)&data=\(dataImage)") { (data, response, error) -> Void in
-            print(NSString(data: data, encoding: NSUTF8StringEncoding))
+//        
+//       let updata:NSData = "user_id=\(UserInfo.UserID!)&token=\(UserInfo.UserToken!)&data=".dataUsingEncoding(NSUTF8StringEncoding)? + dataImage
+//        
+//        RequestURL.requestImage("post", type: requestType.upHeadImage, params: updata) { (data, response, error) -> Void in
+//            self.clearAllNotice()
+//            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+//        }
+        
+//        let dataImage:NSData = UIImageJPEGRepresentation(headImage.image!,0.000001)!
+//        let updata:NSData = "user_id=\(UserInfo.UserID!)&token=\(UserInfo.UserToken!)&data=".dataUsingEncoding(NSUTF8StringEncoding)!
+//
+//        let data:NSMutableData = NSMutableData()
+//        
+//        data.appendData(updata)
+//        data.appendData(dataImage)
+        
+//        Alamofire.upload(.POST, "http://moran.chinacloudapp.cn/moran/web/user/avatar", data: data)
+//            .response { (request, urlresquest, data, error) -> Void in
+//                print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+//                
+//                print(request)
+//                
+//                print(urlresquest)
+//                
+//                if error == nil{
+//                    let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+//                    let message: String = json.objectForKey("message") as! String
+//                    self.clearAllNotice()
+//                    if message == "Update success"{
+//                        NSNotificationCenter.defaultCenter().postNotificationName("updateUserImage", object: nil)
+//                        self.navigationController?.popToRootViewControllerAnimated(true)
+//                        self.noticeSuccess("修改成功!")
+//                    }
+//                }
+//                else{
+//                    print(error)
+//                }
+//        }
+
+        let parameters = [
+            "user_id":UserInfo.UserID!,
+            "token":UserInfo.UserToken!,
+            "data":dataImage
+        ]
+        Alamofire.request(.POST, "http://moran.chinacloudapp.cn/moran/web/user/avatar", parameters: parameters).response { (request, urlresquest, data, error) -> Void in
+            if error == nil{
+                let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                let message: String = json.objectForKey("message") as! String
+                self.clearAllNotice()
+                if message == "Update success"{
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                    self.noticeSuccess("修改成功!")
+                    NSNotificationCenter.defaultCenter().postNotificationName("updateUserImage", object: nil)
+                }
+            }
         }
-        
-        
-        
-//        let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-//        print(json)
 
     }
     

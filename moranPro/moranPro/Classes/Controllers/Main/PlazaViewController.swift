@@ -12,7 +12,9 @@ class PlazaViewController: UITabBarController,UINavigationControllerDelegate,UII
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
         // Do any additional setup after loading the view.
         self.tabBar.tintColor = UIColor(red:233.0/255.0,green:106.0/255.0,blue:52.0/255.0,alpha:1)
         
@@ -75,6 +77,9 @@ class PlazaViewController: UITabBarController,UINavigationControllerDelegate,UII
         print(info[UIImagePickerControllerOriginalImage] as? UIImage)
         //关闭照片选取器
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+        
     }
     
 

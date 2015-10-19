@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpViewController: UIViewController,UITextFieldDelegate {
 
@@ -56,7 +57,38 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
             return
         }
         
-//        RequestURL.request("post", type: requestType.register,params:"username=\(userEmail.text!)&password=\(userPwd.text!)&email=\(userEmail.text!)&gbid=G2015020201") 
+        let parameters = [
+            "username":"\(userEmail.text!)",
+            "password":"\(userPwd.text!)",
+            "email":"\(userEmail.text!)",
+            "gbid":"G2015020201"
+        ]
+        self.pleaseWait()
+        Alamofire.request(.POST, "http://moran.chinacloudapp.cn/moran/web/user/register", parameters: parameters).response { (request, urlresquest, data, error) -> Void in
+            if error == nil{
+                let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                let message: String = json.objectForKey("message") as! String
+                self.clearAllNotice()
+                switch message
+                {
+                    case "Register success":
+                        
+                        dispatch_async(dispatch_get_main_queue(),{
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                            self.noticeSuccess("注册成功!")
+                        })
+                    case "Email exists":
+                        
+                        self.noticeError("邮箱已存在!")
+                    default:self.noticeError("异常!")
+                }
+            }
+        }
+        
+        
+        
+        
+//        RequestURL.request("post", type: requestType.register,params:"username=\(userEmail.text!)&password=\(userPwd.text!)&email=\(userEmail.text!)&gbid=G2015020201")
 //            if(error != nil)
 //            {
 //                print(error)

@@ -1,26 +1,21 @@
 //
-//  MainViewController.swift
+//  NavigationViewController.swift
 //  moranPro
 //
-//  Created by 李建澎 on 15/10/13.
+//  Created by 李建澎 on 15/10/19.
 //  Copyright © 2015年 Fish. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class NavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.navigationItem. = UIColor(red:233.0/255.0,green:106.0/255.0,blue:52.0/255.0,alpha:1)
-                // Do any additional setup after loading the view.
-//        let tabitem = self.tabBarItem
-//        tabitem.title = "你好"
-//        tabitem.image = UIImage(named: "my_selected")
-//        tabitem.selectedImage = UIImage(named: "my")
-
-       
+        self.navigationBar.barTintColor = UIColor(red:233.0/255.0,green:106.0/255.0,blue:52.0/255.0,alpha:1)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,13 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let userToken = NSUserDefaults.standardUserDefaults().stringForKey("user_Token")
+        UserInfo.UserID = NSUserDefaults.standardUserDefaults().stringForKey("user_ID")
+        UserInfo.UserName = NSUserDefaults.standardUserDefaults().stringForKey("user_Name")
+        UserInfo.UserEmail = NSUserDefaults.standardUserDefaults().stringForKey("user_Email")
         
         
         
-        print(userToken)
-        if(userToken != nil)
+        if(UserInfo.UserID != nil)
         {
+            
+            Alamofire.request(.GET, "http://moran.chinacloudapp.cn/moran/web/users/\(UserInfo.UserID!)", parameters: nil).response { (request, urlresquest, data, error) -> Void in
+                if error == nil{
+                    let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                    UserInfo.UserToken = json.objectForKey("token") as? String
+                    UserInfo.UserName = json.objectForKey("name") as? String
+                }
+            }
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
             let main:PlazaViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("PlazaViewController") as! PlazaViewController
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

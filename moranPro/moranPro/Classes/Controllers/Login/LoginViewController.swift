@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController: UIViewController,UITextFieldDelegate {
 
@@ -32,57 +33,61 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             self.noticeError("密码不能为空!")
             return
         }
+        
+        let parameters = [
+            "email":"\(loginEmail.text!)",
+            "password":"\(loginPwd.text!)"
+        ]
         self.pleaseWait()
-        let data:NSData = RequestURL.request("post", type: requestType.login,params:"email=\(loginEmail.text!)&password=\(loginPwd.text!)")
         
-        let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-        print(json)
-        let message: String = json.objectForKey("message") as! String
-        
-        if(message == "Login success")
-        {
-            let userid:String = json.objectForKey("data")!.objectForKey("user_id") as! String
-            let username:String = json.objectForKey("data")!.objectForKey("user_name") as! String
-            let token:String = json.objectForKey("data")!.objectForKey("token") as! String
-            //UserInfo.token = token
-            let useremail = self.loginEmail.text
-            self.clearAllNotice()
-            if(userid != "")
-            {
-                NSUserDefaults.standardUserDefaults().setObject(userid, forKey: "user_ID")
+        Alamofire.request(.POST, "http://moran.chinacloudapp.cn/moran/web/user/login", parameters: parameters).response { (request, urlresquest, data, error) -> Void in
+            if error == nil{
+                let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                let message: String = json.objectForKey("message") as! String
+                self.clearAllNotice()
+                switch message
+                {
+                case "Login success":
+                    let userid:String = json.objectForKey("data")!.objectForKey("user_id") as! String
+                    let username:String = json.objectForKey("data")!.objectForKey("user_name") as! String
+                    let token:String = json.objectForKey("data")!.objectForKey("token") as! String
+                    
+                    let useremail = self.loginEmail.text
+                    if(userid != "")
+                    {
+                        UserInfo.UserID = userid
+                        NSUserDefaults.standardUserDefaults().setObject(userid, forKey: "user_ID")
+                    }
+                    if(username != "")
+                    {
+                        UserInfo.UserName = username
+                        NSUserDefaults.standardUserDefaults().setObject(username, forKey: "user_Name")
+                    }
+                    if(token != "" )
+                    {
+                        UserInfo.UserToken = token
+                        NSUserDefaults.standardUserDefaults().setObject(token, forKey: "user_Token")
+                    }
+                    if(useremail != "" )
+                    {
+                        UserInfo.UserEmail = useremail
+                        NSUserDefaults.standardUserDefaults().setObject(useremail, forKey: "user_Email")
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(),{
+                        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+                        let main:PlazaViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("PlazaViewController") as! PlazaViewController
+                        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                        appDelegate.window?.rootViewController = main
+                    })
+                case "No such user":
+                    self.noticeError("账户不存在!")
+                case "Wrong password":
+                    self.noticeError("密码不正确!")
+                default:self.noticeError("异常!")
+                }
             }
-            if(username != "")
-            {
-                NSUserDefaults.standardUserDefaults().setObject(username, forKey: "user_Name")
-            }
-            if(token != "" )
-            {
-                NSUserDefaults.standardUserDefaults().setObject(token, forKey: "user_Token")
-            }
-            if(useremail != "" )
-            {
-                NSUserDefaults.standardUserDefaults().setObject(useremail, forKey: "user_Email")
-            }
-            
-            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-            let main:PlazaViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("PlazaViewController") as! PlazaViewController
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            appDelegate.window?.rootViewController = main
         }
-        else if(message == "No such user"){
-            self.clearAllNotice()
-            self.noticeError("账户不存在!")
-        }
-        else if(message == "Wrong password"){
-            self.clearAllNotice()
-            self.noticeError("密码不正确!")
-        }
-        else
-        {
-            self.clearAllNotice()
-            self.noticeError("登录失败!")
-        }
-
     }
 
     override func didReceiveMemoryWarning() {

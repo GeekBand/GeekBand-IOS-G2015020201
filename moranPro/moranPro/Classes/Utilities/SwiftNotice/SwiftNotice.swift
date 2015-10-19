@@ -20,13 +20,13 @@ extension UIViewController {
     }
     
     // new apis from v3.3
-    func noticeSuccess(text: String, autoClear: Bool = false, autoClearTime: Int = 3) {
+    func noticeSuccess(text: String, autoClear: Bool = true, autoClearTime: Int = 1) {
         SwiftNotice.showNoticeWithText(NoticeType.success, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
-    func noticeError(text: String, autoClear: Bool = false, autoClearTime: Int = 3) {
+    func noticeError(text: String, autoClear: Bool = true, autoClearTime: Int = 1) {
         SwiftNotice.showNoticeWithText(NoticeType.error, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
-    func noticeInfo(text: String, autoClear: Bool = false, autoClearTime: Int = 3) {
+    func noticeInfo(text: String, autoClear: Bool = true, autoClearTime: Int = 1) {
         SwiftNotice.showNoticeWithText(NoticeType.info, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
     
