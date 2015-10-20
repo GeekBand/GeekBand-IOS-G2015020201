@@ -37,6 +37,7 @@
 		1E6E1FD11BCCC42D005BB576 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FCF1BCCC42D005BB576 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1E6E1FD21BCCC42D005BB576 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FD01BCCC42D005BB576 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1E6E1FD61BCCC4FF005BB576 /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E1FD51BCCC4FF005BB576 /* RequestURL.swift */; settings = {ASSET_TAGS = (); }; };
+		1EC28CA61BD52DA500F44B0E /* BLMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC28CA51BD52DA500F44B0E /* BLMultipartForm.m */; settings = {ASSET_TAGS = (); }; };
 		1ECF26581BCD018200EECEBB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF26571BCD018200EECEBB /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
 		1ED513C91BD20644000BA0E8 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED513C81BD20644000BA0E8 /* MyTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1ED513D41BD249C5000BA0E8 /* HeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED513D31BD249C5000BA0E8 /* HeadViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -153,6 +154,9 @@
 		1E6E1FCF1BCCC42D005BB576 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1E6E1FD01BCCC42D005BB576 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1E6E1FD51BCCC4FF005BB576 /* RequestURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestURL.swift; sourceTree = "<group>"; };
+		1EC28C9F1BD52DA500F44B0E /* moranPro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "moranPro-Bridging-Header.h"; sourceTree = "<group>"; };
+		1EC28CA41BD52DA500F44B0E /* BLMultipartForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLMultipartForm.h; path = "../../../../../../../课件/Utility/BLMultipartForm.h"; sourceTree = "<group>"; };
+		1EC28CA51BD52DA500F44B0E /* BLMultipartForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLMultipartForm.m; path = "../../../../../../../课件/Utility/BLMultipartForm.m"; sourceTree = "<group>"; };
 		1ECF26571BCD018200EECEBB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1ED513C81BD20644000BA0E8 /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		1ED513D31BD249C5000BA0E8 /* HeadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadViewController.swift; sourceTree = "<group>"; };
@@ -364,7 +368,10 @@
 		1E6E1D8C1BCCB3D5005BB576 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1EC28CA41BD52DA500F44B0E /* BLMultipartForm.h */,
+				1EC28CA51BD52DA500F44B0E /* BLMultipartForm.m */,
 				1ED5140B1BD27379000BA0E8 /* SwiftNotice */,
+				1EC28C9F1BD52DA500F44B0E /* moranPro-Bridging-Header.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -491,6 +498,7 @@
 		1E6E1D4A1BCCB348005BB576 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Fish;
 				TargetAttributes = {
@@ -631,6 +639,7 @@
 				1E6CEACC1BD48FAC003ADE48 /* Download.swift in Sources */,
 				1E6CEACF1BD48FAC003ADE48 /* Manager.swift in Sources */,
 				1E6CEAD41BD48FAC003ADE48 /* ResponseSerialization.swift in Sources */,
+				1EC28CA61BD52DA500F44B0E /* BLMultipartForm.m in Sources */,
 				1E6CEAD91BD48FAC003ADE48 /* Validation.swift in Sources */,
 				1E6E1FD61BCCC4FF005BB576 /* RequestURL.swift in Sources */,
 			);
@@ -758,13 +767,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "moranPro/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fish.moranPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "moranPro/Classes/Utilities/moranPro-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -772,13 +783,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "moranPro/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fish.moranPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "moranPro/Classes/Utilities/moranPro-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -65,68 +65,44 @@ class HeadViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     
     @IBAction func genghuanHeadAction(sender: AnyObject) {
-        let dataImage:NSData = UIImageJPEGRepresentation(headImage.image!,0.000001)!
-        //self.pleaseWait()
+        self.pleaseWait()
         
-        //self.clearAllNotice()
-        //self.testImage.image = UIImage(data: dataImage.dataUsingEncoding(NSUTF8StringEncoding)!)
-
-//        
-//       let updata:NSData = "user_id=\(UserInfo.UserID!)&token=\(UserInfo.UserToken!)&data=".dataUsingEncoding(NSUTF8StringEncoding)? + dataImage
-//        
-//        RequestURL.requestImage("post", type: requestType.upHeadImage, params: updata) { (data, response, error) -> Void in
-//            self.clearAllNotice()
-//            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
-//        }
+        let dataImage:NSData = UIImageJPEGRepresentation(headImage.image!,0.1)!
         
-//        let dataImage:NSData = UIImageJPEGRepresentation(headImage.image!,0.000001)!
-//        let updata:NSData = "user_id=\(UserInfo.UserID!)&token=\(UserInfo.UserToken!)&data=".dataUsingEncoding(NSUTF8StringEncoding)!
-//
-//        let data:NSMutableData = NSMutableData()
-//        
-//        data.appendData(updata)
-//        data.appendData(dataImage)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://moran.chinacloudapp.cn/moran/web/user/avatar")!)
+        request.HTTPMethod = "POST"
         
-//        Alamofire.upload(.POST, "http://moran.chinacloudapp.cn/moran/web/user/avatar", data: data)
-//            .response { (request, urlresquest, data, error) -> Void in
-//                print(NSString(data: data!, encoding: NSUTF8StringEncoding))
-//                
-//                print(request)
-//                
-//                print(urlresquest)
-//                
-//                if error == nil{
-//                    let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-//                    let message: String = json.objectForKey("message") as! String
-//                    self.clearAllNotice()
-//                    if message == "Update success"{
-//                        NSNotificationCenter.defaultCenter().postNotificationName("updateUserImage", object: nil)
-//                        self.navigationController?.popToRootViewControllerAnimated(true)
-//                        self.noticeSuccess("修改成功!")
-//                    }
-//                }
-//                else{
-//                    print(error)
-//                }
-//        }
-
-        let parameters = [
-            "user_id":UserInfo.UserID!,
-            "token":UserInfo.UserToken!,
-            "data":dataImage
-        ]
-        Alamofire.request(.POST, "http://moran.chinacloudapp.cn/moran/web/user/avatar", parameters: parameters).response { (request, urlresquest, data, error) -> Void in
+        let session = NSURLSession.sharedSession()
+        
+        let form = BLMultipartForm()
+        form.addValue(UserInfo.UserID!, forField: "user_id")
+        form.addValue(UserInfo.UserToken!, forField: "token")
+        form.addValue(dataImage, forField: "data")
+        request.HTTPBody = form.httpBody()
+        request.addValue(form.contentType(), forHTTPHeaderField: "Content-Type")
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             if error == nil{
+                print(NSString(data: data!, encoding: NSUTF8StringEncoding))
                 let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
                 let message: String = json.objectForKey("message") as! String
                 self.clearAllNotice()
                 if message == "Update success"{
-                    self.navigationController?.popToRootViewControllerAnimated(true)
+                    dispatch_async(dispatch_get_main_queue(),{
+                    self.dismissViewControllerAnimated(true, completion: nil)
                     self.noticeSuccess("修改成功!")
-                    NSNotificationCenter.defaultCenter().postNotificationName("updateUserImage", object: nil)
+                    })
                 }
+
             }
-        }
+            
+        })
+        
+        task.resume()
+        
+        
+
+        
 
     }
     
