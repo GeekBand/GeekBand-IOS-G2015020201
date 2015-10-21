@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        
+        
+        
         UserInfo.UserID = NSUserDefaults.standardUserDefaults().stringForKey("user_ID")
         UserInfo.UserName = NSUserDefaults.standardUserDefaults().stringForKey("user_Name")
         UserInfo.UserEmail = NSUserDefaults.standardUserDefaults().stringForKey("user_Email")
@@ -26,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             
             Alamofire.request(.GET, "http://moran.chinacloudapp.cn/moran/web/users/\(UserInfo.UserID!)", parameters: nil).response { (request, urlresquest, data, error) -> Void in
+                //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+                
                 if error == nil{
                     let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
                     UserInfo.UserToken = json.objectForKey("token") as? String

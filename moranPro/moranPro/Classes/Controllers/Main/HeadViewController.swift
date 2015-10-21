@@ -15,14 +15,16 @@ class HeadViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBOutlet weak var selectedHeadImage: UIButton!
     @IBOutlet weak var genghuanImage: UIButton!
     
-    
-    @IBOutlet weak var testImage: UIImageView!
+
     
     override func viewDidLoad() {
-       
         super.viewDidLoad()
+        headImage.layer.cornerRadius = CGRectGetHeight(self.headImage.bounds) / 2
+        headImage.layer.masksToBounds = true;
+
         selectedHeadImage.layer.cornerRadius = 16;
         genghuanImage.layer.cornerRadius = 16
+
     }
     
     
@@ -57,7 +59,6 @@ class HeadViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         //将图片赋值给头像图片
         headImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        print("获取图片")
         //关闭照片选取器
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -66,46 +67,39 @@ class HeadViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     @IBAction func genghuanHeadAction(sender: AnyObject) {
         self.pleaseWait()
-        
-        let dataImage:NSData = UIImageJPEGRepresentation(headImage.image!,0.1)!
-        
+        let dataImage:NSData = UIImageJPEGRepresentation(headImage.image!,0.00001)!
         let request = NSMutableURLRequest(URL: NSURL(string: "http://moran.chinacloudapp.cn/moran/web/user/avatar")!)
         request.HTTPMethod = "POST"
-        
-        let session = NSURLSession.sharedSession()
-        
-        let form = BLMultipartForm()
+        request.timeoutInterval = 10
+        let form:BLMultipartForm = BLMultipartForm()
         form.addValue(UserInfo.UserID!, forField: "user_id")
         form.addValue(UserInfo.UserToken!, forField: "token")
         form.addValue(dataImage, forField: "data")
-        request.HTTPBody = form.httpBody()
         request.addValue(form.contentType(), forHTTPHeaderField: "Content-Type")
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+        request.HTTPBody = form.httpBody()
+        let session = NSURLSession.sharedSession()
+        let task:NSURLSessionDataTask = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             if error == nil{
-                print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+               
                 let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
                 let message: String = json.objectForKey("message") as! String
                 self.clearAllNotice()
                 if message == "Update success"{
                     dispatch_async(dispatch_get_main_queue(),{
+                    NSNotificationCenter.defaultCenter().postNotificationName("updateUserImage", object: nil)
                     self.dismissViewControllerAnimated(true, completion: nil)
                     self.noticeSuccess("修改成功!")
                     })
                 }
-
+                else{
+                    dispatch_async(dispatch_get_main_queue(),{
+                       self.noticeError("修改失败!")
+                    })
+                }
             }
-            
-        })
-        
+        }
         task.resume()
-        
-        
-
-        
-
     }
-    
 
     //取消按钮事件
     @IBAction func CancelAction(sender: AnyObject) {

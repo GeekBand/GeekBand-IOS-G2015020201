@@ -70,7 +70,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-501" y="179"/>
+            <point key="canvasLocation" x="-627" y="179"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="rSz-id-huQ">
@@ -258,6 +258,9 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="iP0-q5-gLS" kind="presentation" id="VfK-Ls-xX2"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="58r-hj-tCu">
                                         <rect key="frame" x="0.0" y="444" width="320" height="44"/>
@@ -300,7 +303,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ea-Gl-UQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-507" y="819"/>
+            <point key="canvasLocation" x="-627" y="819"/>
         </scene>
         <!--更改昵称-->
         <scene sceneID="qGo-zx-XKC">
@@ -355,6 +358,43 @@
             </objects>
             <point key="canvasLocation" x="-104" y="650"/>
         </scene>
+        <!--关于我们-->
+        <scene sceneID="yy4-hY-NIT">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="1GX-dI-tHn" customClass="WebViewController" customModule="moranPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zYS-eP-qlT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uhq-N9-35a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bXm-Ds-z3n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jx-cB-yXc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="关于我们" id="xbo-91-Kk9">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="P0Q-oM-1Bi">
+                            <connections>
+                                <action selector="CancelAction:" destination="1GX-dI-tHn" id="u01-YT-zZv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="webview" destination="1jx-cB-yXc" id="DDc-4U-bo7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEu-eT-yVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197" y="1507"/>
+        </scene>
         <!--Navigation View Controller-->
         <scene sceneID="Bwh-D2-giZ">
             <objects>
@@ -371,7 +411,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vW-mA-aNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-104" y="1283"/>
+            <point key="canvasLocation" x="428" y="1283"/>
         </scene>
         <!--头像-->
         <scene sceneID="Xqg-9T-HFR">
@@ -411,10 +451,6 @@
                                     <action selector="SelectHeadImageAction:" destination="1Bp-Bl-E4t" eventType="touchUpInside" id="bsu-Oy-O48"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQa-Ya-wBh">
-                                <rect key="frame" x="40" y="423" width="240" height="128"/>
-                                <animations/>
-                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -431,12 +467,30 @@
                         <outlet property="genghuanImage" destination="x6D-Ii-VGs" id="WBP-Af-D4i"/>
                         <outlet property="headImage" destination="s9C-gr-gCT" id="gRf-SY-sg6"/>
                         <outlet property="selectedHeadImage" destination="PgL-Ty-Odf" id="Sj8-5A-AHn"/>
-                        <outlet property="testImage" destination="fQa-Ya-wBh" id="Wf9-2C-gCw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZH-SK-JWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247" y="1283"/>
+            <point key="canvasLocation" x="779" y="1283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dp9-BJ-0az">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iP0-q5-gLS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a4m-hH-Lfc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1GX-dI-tHn" kind="relationship" relationship="rootViewController" id="cO9-jc-ZrY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5GR-2s-8IB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-627" y="1507"/>
         </scene>
     </scenes>
     <resources>

@@ -19,9 +19,13 @@ class MyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        headImage.layer.cornerRadius = CGRectGetHeight(self.headImage.bounds) / 2
+        headImage.layer.masksToBounds = true;
+
+        
         self.userNameLab.text = UserInfo.UserName!
         self.userEmailLab.text = UserInfo.UserEmail!
-        
+        //获取头像
         self.GetNewHeadImage()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "UserNameUpDatting:", name: "updateUserName", object: nil)
@@ -45,18 +49,14 @@ class MyTableViewController: UITableViewController {
     func GetNewHeadImage()
     {
         
-        //let parameters = [
-        //    "user_id":UserInfo.UserID!
-        //]
-
-//        let updata:NSData = "user_id=\(UserInfo.UserID!)&token=\(UserInfo.UserToken!)&data=\(dataImage)".dataUsingEncoding(NSUTF8StringEncoding)!
-//        Alamofire.request(.GET, "http://moran.chinacloudapp.cn/moran/web/user/show", parameters: parameters).response { (request, urlresquest, data, error) -> Void in
-//            print(data)
-//            
-//            if error == nil{
-//                self.headImage.image = UIImage(data: data!)
-//            }
-//        }
+        let parameters = [
+            "user_id":UserInfo.UserID!
+        ]
+        Alamofire.request(.GET, "http://moran.chinacloudapp.cn/moran/web/user/show", parameters: parameters).response { (request, urlresquest, data, error) -> Void in
+            if error == nil{
+                self.headImage.image = UIImage(data: data!)
+            }
+        }
         
     }
     
@@ -73,7 +73,7 @@ class MyTableViewController: UITableViewController {
     
     func UserImageUpDatting(_: NSNotification)
     {
-        print("更新图片的方法执行了")
+        GetNewHeadImage()
     }
 
     override func didReceiveMemoryWarning() {
