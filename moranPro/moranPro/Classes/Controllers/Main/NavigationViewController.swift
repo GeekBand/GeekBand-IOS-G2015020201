@@ -12,8 +12,14 @@ class NavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //设置字体颜色
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        //设置背景颜色
         self.navigationBar.barTintColor = UIColor(red:233.0/255.0,green:106.0/255.0,blue:52.0/255.0,alpha:1)
+       // let view:UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.navigationBar.bounds.width, height: self.navigationBar.bounds.height))
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

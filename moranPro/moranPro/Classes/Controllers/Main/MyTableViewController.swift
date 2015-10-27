@@ -30,17 +30,6 @@ class MyTableViewController: UITableViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "UserNameUpDatting:", name: "updateUserName", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "UserImageUpDatting:", name: "updateUserImage", object: nil)
-        
-        
-        
-        //let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-        //print(json)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     /**
@@ -96,7 +85,12 @@ class MyTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
-        return 0;
+        if section == 0{
+            return 13
+        }
+        else{
+            return 10
+        }
     }
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
     {

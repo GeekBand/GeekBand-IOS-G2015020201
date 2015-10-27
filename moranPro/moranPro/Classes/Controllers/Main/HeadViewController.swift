@@ -66,7 +66,7 @@ class HeadViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     
     @IBAction func genghuanHeadAction(sender: AnyObject) {
-        self.pleaseWait()
+        self.pleaseWait() //HUD
         let dataImage:NSData = UIImageJPEGRepresentation(headImage.image!,0.00001)!
         let request = NSMutableURLRequest(URL: NSURL(string: "http://moran.chinacloudapp.cn/moran/web/user/avatar")!)
         request.HTTPMethod = "POST"
@@ -83,17 +83,17 @@ class HeadViewController: UIViewController,UIImagePickerControllerDelegate,UINav
                
                 let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
                 let message: String = json.objectForKey("message") as! String
-                self.clearAllNotice()
+                self.clearAllNotice() //HUD
                 if message == "Update success"{
                     dispatch_async(dispatch_get_main_queue(),{
                     NSNotificationCenter.defaultCenter().postNotificationName("updateUserImage", object: nil)
                     self.dismissViewControllerAnimated(true, completion: nil)
-                    self.noticeSuccess("修改成功!")
+                    self.noticeSuccess("上传成功!")
                     })
                 }
                 else{
                     dispatch_async(dispatch_get_main_queue(),{
-                       self.noticeError("修改失败!")
+                       self.noticeError("上传失败!")
                     })
                 }
             }

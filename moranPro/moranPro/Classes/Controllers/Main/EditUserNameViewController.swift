@@ -9,11 +9,13 @@
 import UIKit
 import Alamofire
 
-class EditUserNameViewController: UIViewController {
+class EditUserNameViewController: UIViewController{
 
     @IBOutlet weak var txtUserName: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.txtUserName.text = UserInfo.UserName!
 
         // Do any additional setup after loading the view.
     }

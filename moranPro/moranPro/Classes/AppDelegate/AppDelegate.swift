@@ -24,8 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserInfo.UserName = NSUserDefaults.standardUserDefaults().stringForKey("user_Name")
         UserInfo.UserEmail = NSUserDefaults.standardUserDefaults().stringForKey("user_Email")
         
-        
-        
+                
         if(UserInfo.UserID != nil)
         {
             
@@ -36,12 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let json : AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
                     UserInfo.UserToken = json.objectForKey("token") as? String
                     UserInfo.UserName = json.objectForKey("name") as? String
+                    
+                    
+                    let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let main:PlazaViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("PlazaViewController") as! PlazaViewController
+                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = main
+
                 }
             }
-            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-            let main:PlazaViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("PlazaViewController") as! PlazaViewController
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            appDelegate.window?.rootViewController = main
+            
         }
         
         return true
